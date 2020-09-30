@@ -41,8 +41,8 @@ html, body, h1, h2, h3, h4, h5, h6, div {
           </div>
           <div class="flip-card-back card-container">
             <img id="sideb" onclick="noflip()" src="sideB.jpg" alt="side b of postcard" class="im" />
-            <div id="text-container">
-              <p id="text">
+            <div id="text-container" onclick="noflip()">
+              <p id="text" onclick="noflip()">
                 askdf ladkf lasdjf laskdjf laskdf lakdsjf laskdjf lasdkjf lasdkjf lasdkfj alsdkfj lkj.
               </p>
             </div>
@@ -53,8 +53,8 @@ html, body, h1, h2, h3, h4, h5, h6, div {
   </div>
   <script>
     var x = document.getElementById('x');
-
     var sideA = document.getElementById('sideA');
+    var text = document.getElementById('text');
 
     function isLandscape() {
       return window.matchMedia("(orientation: landscape)").matches;
@@ -78,8 +78,16 @@ html, body, h1, h2, h3, h4, h5, h6, div {
       }
     }
 
+    var keys = {
+      '1': 'Morbi congue ante eu quam iaculis consequat. Nullam dapibus tristique tincidunt.',
+      '2': 'In rutrum interdum fringilla. Class aptent taciti.',
+      '3': 'Class aptent taciti sociosqu ad litora torquent per conubia nostra.',
+    };
     function delayedFlip() {
       setTimeout(flip, 1000);
+      var url = window.location.href;
+      var content = keys[url.split('key')[1]];
+      text.innerText = content;
     }
 
     window.addEventListener("orientationchange", noflip);
