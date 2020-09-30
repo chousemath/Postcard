@@ -5,10 +5,15 @@
 <title>Postcard - 수강/조셉</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <style>
+@font-face {
+    font-family: NB;
+    src: url('./NanumBarunpenR.ttf');
+}
 html, body, h1, h2, h3, h4, h5, h6, div {
   padding: 0;
   border: 0;
   margin: 0;
+  font-family: NB;
 }
 
 .flip-card-front, .flip-card-back {
@@ -81,6 +86,17 @@ html, body, h1, h2, h3, h4, h5, h6, div {
       '1': 'Morbi congue ante eu quam iaculis consequat. Nullam dapibus tristique tincidunt.',
       '2': 'In rutrum interdum fringilla. Class aptent taciti.',
       '3': 'Class aptent taciti sociosqu ad litora torquent per conubia nostra.',
+      'imo0': '혜원이모 저희 결혼을 축하해주셔서 감사합니다. 자주 뵙지는 못하지만, 우리의 중요한 순간을 잊지 않고 챙겨 주심에 마음이 따뜻했습니다. 가정에 항상 행복과 건강이 가득하길 저희 부부가 기도하겠습니다.', // 기혜원
+      'imo1': '요섭삼촌 안녕하세요~ 아이들은 잘 지내고 있는지요, 많이 바쁘신 와중에도 저희의 결혼식을 잊지 않고 챙겨 주심에 감사한 마음입니다. 즐겁고 풍요로운 한가위 되시길 바라고 뵐 수 있길 바라봅니다.', // 김요섭
+      'imo2': '혜진이모 저희 결혼을 축하해주셔서 감사합니다. 우리의 소중한 순간을 잊지 않고 챙겨 주심에 따뜻한 마음을 받았습니다. 자주 찾아뵙지는 못하지만, 가정에 평화와 행복이 가득하길 저희 부부가 기도하겠습니다.', // 김혜진
+      'imo3': '혜숙이모 저희 결혼을 축하해주셔서 감사합니다. 저의 소중한 순간을 잊지 않고 챙겨 주심에 따뜻한 감동을 받았습니다. 자주 찾아 뵙지는 못해 죄송한 마음이지만, 항상 행복하시길 저희 부부가 기도하겠습니다.', // 김혜숙
+      'imo4': '혜란이모 저희 결혼을 축하해주셔서 감사합니다. 저의 소중한 순간을 잊지 않고 챙겨 주심에 따뜻한 감동을 받았습니다. 자주 찾아 뵙지는 못해 죄송한 마음이지만, 항상 행복하시길 저희 부부가 기도하겠습니다.', // 김혜란
+      'imo5': '혜옥이모 저희 결혼을 축하해주셔서 감사합니다. 많이 바쁘신 와중에도 저희의 결혼식을 잊지 않고 챙겨 주심에 감사한 마음입니다. 즐겁고 풍요로운 한가위 되시길 바라고 뵐 수 있길 바라봅니다.', // 김혜옥
+      'bak': '박 대표님 안녕하세요. 저희 결혼을 축하해주셔서 감사합니다. 바쁘신 와중에도 저의 중요한 순간을 잊지 않고 챙겨주심에 큰 감동을 받았습니다. 이번 명절 행복하고 풍요롭게 지내시고, 가정에 행복과 건강이 항상 함께하길 바랍니다.', // 박권구 대표님
+      'nam': '남부님 안녕하세요 :) 바쁘신 와중에도 저희 소중한 순간을 응원해 주셔서 감사합니다. 이번 명절도 행복하고 풍요롭게 지내시길 바라고, 가정에 행복과 건강이 항상 함께하길 저희 부부가 기도하겠습니다. 곧 사무실에서 뵈어요 🙂', // 남경섭
+      'ju': 'Jiyoon! We had a great time in Jeju-do! Thank you for thinking of us. Hope to see you sometime soon!', // 지윤
+      'kwak': '곽 대표님 안녕하세요. 저희 결혼을 축하해주셔서 감사합니다. 바쁘신 와중에도 저의 중요한 순간을 잊지 않고 챙겨주심에 큰 감동을 받았습니다. 이번 명절 행복하고 풍요롭게 지내시고, 가정에 행복과 건강이 항상 함께하길 바랍니다.', // 광성욱
+      'choi': '최 회장님 안녕하세요. 저희 결혼을 축하해주셔서 감사합니다. 바쁘신 와중에도 저의 중요한 순간을 잊지 않고 챙겨주심에 큰 감동을 받았습니다. 이번 명절 행복하고 풍요롭게 지내시고, 가정에 행복과 건강이 항상 함께하길 바랍니다.', // 최성호
     };
     function delayedFlip() {
       setTimeout(flip, 1000);
