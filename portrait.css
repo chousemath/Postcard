@@ -1,0 +1,55 @@
+.im {
+  width: calc(100vw - 32px);
+  height: auto;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.noflip {
+  transform: rotateX(0deg) rotateY(0deg)  rotateZ(0deg);
+}
+
+.flip-card-back {
+  background-color: blue;
+  transform: rotateY(180deg);
+  position: relative;
+}
+
+#text-container {
+    position: absolute;
+    width: 56vw;
+    height: 55vw;
+    bottom: 0;
+    left: 0;
+}
+
+#text {
+    color: #000000;
+    font-size: 24px;
+    text-align: left;
+    transform: rotate(90deg);
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+    /* IE */
+    -ms-transform: rotate(90deg);
+    /* Opera */
+    -o-transform: rotate(90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}

@@ -4,8 +4,85 @@
 <meta charset="utf-8">
 <title>Postcard - 수강/조셉</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style>
+html, body, h1, h2, h3, h4, h5, h6, div {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background-color: transparent;
+  color: black;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="./landscape.css" media="screen and (orientation: landscape)">
+<link rel="stylesheet" type="text/css" href="./portrait.css" media="screen and (orientation: portrait)">
 </head>
 
-<body>
+<body onload="delayedFlip()">
+  <div style="width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div class="card-container">
+      <div class="flip-card card-container">
+        <div id="x" class="flip-card-inner card-container">
+          <div class="flip-card-front card-container">
+            <img id="sideA" onclick="flip()" src="sideA.jpg" alt="side a of postcard" class="im" />
+          </div>
+          <div class="flip-card-back card-container">
+            <img id="sideb" onclick="noflip()" src="sideB.jpg" alt="side b of postcard" class="im" />
+            <div id="text-container">
+              <p id="text">
+                askdf ladkf lasdjf laskdjf laskdf lakdsjf laskdjf lasdkjf lasdkjf lasdkfj alsdkfj lkj.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var x = document.getElementById('x');
+
+    var sideA = document.getElementById('sideA');
+
+    function isLandscape() {
+      return window.matchMedia("(orientation: landscape)").matches;
+    }
+
+    function flip() {
+      console.log('flip');
+      x.classList.remove('noflip');
+      x.classList.add('flip');
+      if (isLandscape()) {
+        sideA.style.display = 'none';
+      }
+    }
+
+    function noflip() {
+      console.log('noflip');
+      x.classList.remove('flip');
+      x.classList.add('noflip');
+      if (isLandscape()) {
+        sideA.style.display = 'block';
+      }
+    }
+
+    function delayedFlip() {
+      setTimeout(flip, 1000);
+    }
+
+    window.addEventListener("orientationchange", noflip);
+  </script>
 </body>
 </html>
