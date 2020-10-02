@@ -124,12 +124,12 @@ html, body, h1, h2, h3, h4, h5, h6, div {
     };
     function delayedFlip() {
       setTimeout(flip, 1000);
-      var url = window.location.href;
-      var content = keys[url.split('key')[1]];
-      text.innerText = content;
     }
 
     window.addEventListener("orientationchange", noflip);
+    var url = window.location.href;
+    var content = keys[url.split('key')[1]];
+    text.innerText = content;
   </script>
 </body>
 </html>
